@@ -1,0 +1,12 @@
+
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+  * Disable SSH password login
+  * SSH into instances using Amazon Session Manager only, or restrict IP addresses that are allowed to do this
+
+
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+  * Using the policy attached to the ec2 InstanceRole, the application instance should be restricted access to only the buckets it fetches data from, which is the FreeRecipe bucket. 
+  * Server Side Encryption should be enabled for the buckets
+
+

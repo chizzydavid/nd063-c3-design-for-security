@@ -1,0 +1,18 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+AWS Inspector Scan Findings
+
+Network Reachability: Port range 0 to 65535 is reachable from the Internet i-08c5d7e51b29197c7
+Network Reachability: Port range 0 to 65535 is reachable from the Internet i-0f7200624db5056f6
+Network Reachability: Port 22 is reachable from the Internet i-08c5d7e51629197c7
+Network Reachability: Port 22 is reachable from the Internet i-0f7200624db5056f6
+Network Reachability: Port 80 is reachable from the Internet i-08c5d7e51629197c7
+Network Reachability: Port 5000 is reachable from the Internet 1-08c5d7e51629197c7
+
+
+The following steps could remediate the above issues:
+* Remove the rule allowing access to all ports 0 - 65535
+* The ports allowing SSH access should be blocked as well since its not being used
+* Port 80 could be blocke as well if a SG rule is set on the Application Instance to allow inbound traffic from the Load Balancer SG

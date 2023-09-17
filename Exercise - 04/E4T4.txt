@@ -1,0 +1,17 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+  * VPC endpoints should be created to replace the connection made over the internet using the Internet Gateway. This would limit traffic to only resources in the VPC alone.
+  * Native AWS Resources such as AWS WAF or GaurdDuty can be enabled to detect potential threats.
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+  No because if the attacker were to find his way into our VPC by any means, he would still have access to the secret bucket. Updating the IAM permissions appropriately would be the best way to stop this.
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+  No the encryption would be applied to newly added objects.
+
+# What would happen if the original cloud formation templates are applied to this environment.
+  This action would undo all recent changes unfortunately, since the changes were made on the AWS console. 
+  If the CloudFormation templates are to be used going forward then the changes should be made on the templates and then applied as an update.
+
+
+

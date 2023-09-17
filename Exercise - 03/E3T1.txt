@@ -1,0 +1,17 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+UnauthorizedAccess:EC2/SSHBruteForce
+  Instance: i-08c5d7e51b29197c7
+  Severity: High
+
+A brute force attack is a hacking method that uses trial and error to crack passwords, login credentials, or encryption keys. It's often used to gain unauthorized access to individual accounts, systems or networks.
+In this case the vulnerability of having the SSH password login set on the application instance is being exploited
+
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+Amazon GuardDuty can detect anomalies on various AWS resources, including IAM Access Keys, S3 Buckets, Elastic Compute Instances etc. In doing this Guard Duty scans and analyzes data from CloudTrail Event Logs,
+DNS logs, VPC Flow logs. These logs are processed by GuardDuty to find unauthorized and unexpected traffic using specific fields.
+In this case the source of information is VPC Flow Logs which is stored on a specific S3 bucket.
+
+Reference: https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_concepts.html

@@ -1,0 +1,15 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+The Security Group attached to the Recipe Instance has the following Ingress Rules which could easily be exploited. 
+* Inbound Rule: TCP on port 80
+* Inbound Rule: All traffic in all ports
+
+These rules pose a serious security risk and leaves the machine vulnerable to various kinds of attacks. They should be removed and instead a rule allowing traffic from the load balancer should be added.
+
+
+# Poor practice 2
+The provisioned S3 buckets do not have any permissions or policies to restrict who is allowed to make changes on them. This is especially important for the Secret Recipe bucket.
+We could also restrict traffic to the s3 bucket to IP addresses that fall within our VPC only, likely using its CIDR block
+
+

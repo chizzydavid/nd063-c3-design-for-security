@@ -1,0 +1,26 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+Terrascan is one tool which allows you to seamlessly scan infrastructure as code for misconfigurations, insecure policies, detect security vulnerabilities.
+
+
+### Example vulnerability
+Compliance violations, Insecure access policies, invalid resource and infrastructure management and exposed network configurations
+
+
+##Scan AMI’s or containers for OS vulnerabilities
+Clair is an open source project for the static analysis of vulnerabilities in application containers including OCI and docker.
+
+
+### Example vulnerability
+Common vulnerabilities and exploits in system libraries which could allow gaining unauthorized access or running malicious code. Custom policies could also be configured
+
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+AWS GuardDuty, AWS Inspector, AWS Config
+
+
+### Example vulnerability
+Malicious activity such as brute force attacks, Insecure network configurations which could leave certain ports vulnerable to external attack. These could check resources native to the cloud for compliance, potential compromise and insider threats.
+
+
